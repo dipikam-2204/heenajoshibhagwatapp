@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './View/logo.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './View/App.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Nav className="mr-auto">
+    <Navbar bg="dark">
+    <Navbar.Brand href="#home">
+      <img
+        src={logo}
+        width="90"
+        height="90"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+      />
+    </Navbar.Brand>
+  </Navbar>
+    </Nav>
+    <Nav>
+      <Nav.Link className="agentName" href="https://www.compass.com/agents/heena-joshi/">
+        Heena Joshi
+      </Nav.Link>
+    </Nav>
+</Navbar>
     </div>
   );
 }
