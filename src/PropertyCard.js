@@ -1,17 +1,10 @@
-import logo from './View/logo.jpg';
 import React, {useState } from "react";
 import propertyImage from './View/propertyImage.jpeg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './View/App.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-//import InputGroup from 'react-bootstrap/InputGroup';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import ModalForm from './ModalForm';
 
 
@@ -20,17 +13,7 @@ function PropertyCard(){
 const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
-const [validated, setValidated] = useState(false);
 
-const handleSubmit = (event) => {
-  const form = event.currentTarget;
-  if (form.checkValidity() === false) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-
-  setValidated(true);
-};
   return(
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={propertyImage} />
@@ -53,9 +36,7 @@ const handleSubmit = (event) => {
           <Modal.Title>Open House Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <React.StrictMode>
-    <ModalForm />
-  </React.StrictMode>
+        <ModalForm />
         </Modal.Body>
         </Modal>
       </Card.Body>  

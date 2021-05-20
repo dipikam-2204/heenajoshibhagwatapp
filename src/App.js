@@ -34,9 +34,7 @@ function App()  {
     </Navbar>
     </div>
     <div>
-    <React.StrictMode>
       <PropertyCard />
-    </React.StrictMode>
     </div>
     </div>
   );
