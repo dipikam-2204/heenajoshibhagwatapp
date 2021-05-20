@@ -4,3 +4,12 @@
 .radioMargin{
     margin-bottom: 0px;
 }
+
+/* .modal{
+    @supports (display: grid) {
+        @media (min-width: 576px)
+        {
+            max-width: 1000px;
+        }
+    }
+} */
