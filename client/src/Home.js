@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import PropertyCard from './PropertyCard';
 
 
-getList = () => {
+function getList () {
   fetch('/api/getList')
   .then(res => res.json())
   .then(list => this.setState({ list }))
