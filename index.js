@@ -31,15 +31,12 @@ app.use(helmet())
 app.use(cors(corsOptions))
 
 // Anything that doesn't match the above, send back the index.html file
-// --> Add this
-if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'client/build')));
 // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
+  app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
-}
 
 // An api endpoint that returns a short list of items
 app.get('/api/getList', (req,res) => {
