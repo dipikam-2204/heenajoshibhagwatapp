@@ -9,10 +9,9 @@ app.use(express.static(path.join(__dirname, 'client/build')))
 
 
 // Anything that doesn't match the above, send back the index.html file
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
-
 // An api endpoint that returns a short list of items
 app.get('/api/getList', (req,res) => {
   var list = ["item1", "item2", "item3"];
