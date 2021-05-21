@@ -1,10 +1,10 @@
 
-import React, {useState } from "../node_modules/@types/react";
-import './node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, {useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './View/App.css';
-import Form from '../node_modules/react-bootstrap/esm/Form';
-import Button from '../node_modules/react-bootstrap/esm/Button';
-import Col from '../node_modules/react-bootstrap/esm/Col';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 
 
 function ModalForm(){

@@ -1,5 +1,5 @@
-import React, { Component } from '../node_modules/@types/react';
-import { Route, Switch } from '../node_modules/react-router-dom';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './View/App.css';
 import Home from './Home';
 import List from './Dashboard';

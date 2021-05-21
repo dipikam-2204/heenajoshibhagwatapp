@@ -1,9 +1,9 @@
 import logo from './View/logo.jpg';
-import React from "../node_modules/@types/react";
-import './node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './View/App.css';
-import Navbar from '../node_modules/react-bootstrap/esm/Navbar';
-import Nav from '../node_modules/react-bootstrap/esm/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import PropertyCard from './PropertyCard';
 
 
