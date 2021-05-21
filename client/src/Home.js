@@ -14,6 +14,7 @@ getList = () => {
 }
 
 function Home()  {
+  console.log(getList());
   return (
     <div>
     <div>
@@ -41,7 +42,6 @@ function Home()  {
     <div>
       <PropertyCard />
     </div>
-    <div>{list}</div>
     </div>
   );
 }
