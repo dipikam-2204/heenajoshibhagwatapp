@@ -1,10 +1,10 @@
-import React, {useState } from "react";
+import React, {useState } from "../node_modules/@types/react";
 import propertyImage from './View/propertyImage.jpeg';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './View/App.css';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Card from '../node_modules/react-bootstrap/esm/Card';
+import Button from '../node_modules/react-bootstrap/esm/Button';
+import Modal from '../node_modules/react-bootstrap/esm/Modal';
 import ModalForm from './ModalForm';
 
 

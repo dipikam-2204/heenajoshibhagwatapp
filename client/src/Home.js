@@ -1,14 +1,14 @@
 import logo from './View/logo.jpg';
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "../node_modules/@types/react";
+import './node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './View/App.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from '../node_modules/react-bootstrap/esm/Navbar';
+import Nav from '../node_modules/react-bootstrap/esm/Nav';
 import PropertyCard from './PropertyCard';
 
 
 
-function App()  {
+function Home()  {
   return (
     <div>
     <div>
@@ -39,4 +39,4 @@ function App()  {
     </div>
   );
 }
-export default App;
+export default Home;
