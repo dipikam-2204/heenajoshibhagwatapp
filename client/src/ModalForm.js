@@ -162,14 +162,6 @@ function ModalForm(){
           </Form.Control.Feedback>
         </Form.Group>
         </Form.Row> 
-      <Form.Group>
-        <Form.Check
-          required
-          label="Agree to terms and conditions"/>
-        <Form.Control.Feedback type="invalid">
-        You must agree before submitting.
-          </Form.Control.Feedback>
-      </Form.Group>
       <Button type="submit">Submit form</Button>
     </Form>
     );

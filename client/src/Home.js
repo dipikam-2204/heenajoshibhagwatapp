@@ -7,6 +7,11 @@ import Nav from 'react-bootstrap/Nav';
 import PropertyCard from './PropertyCard';
 
 
+getList = () => {
+  fetch('/api/getList')
+  .then(res => res.json())
+  .then(list => this.setState({ list }))
+}
 
 function Home()  {
   return (
@@ -36,6 +41,7 @@ function Home()  {
     <div>
       <PropertyCard />
     </div>
+    <div>{list}</div>
     </div>
   );
 }
