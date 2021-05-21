@@ -6,15 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import PropertyCard from './PropertyCard';
 
-
-function getList () {
-  fetch('/api/getList')
-  .then(res => res.json())
-  .then(list => this.setState({ list }))
-}
-
 function Home()  {
-  console.log(getList());
   return (
     <div>
     <div>

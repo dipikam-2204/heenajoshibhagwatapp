@@ -1,9 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
-
 const helmet = require('helmet') // creates headers that protect from attacks (security)
 const cors = require('cors')  // allows/disallows cross-site communication
+
+const {Pool} = require("pg");
+const pool = new Pool({
+ connectionString: "postgres://yiqxtbupdrhxbz:b06b24af6ab097c93f21dd2c74ac6b54d98604a8e9784ab97d97bf1dff31cb7a@ec2-23-22-191-232.compute-1.amazonaws.com:5432/dfheeiffbtv6al",
+ ssl: {
+ rejectUnauthorized: false
+ }
+});
 
 // Create the server
 const app = express()
@@ -20,10 +27,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
   });
 
 // An api endpoint that returns a short list of items
-app.get('/api/getList', (req,res) => {
-  var list = ["item1", "item2", "item3"];
-  res.json(list);
-  console.log('Sent list of items');
+app.get('/api/getList', (request,response) => {
+  pool.query('SELECT * FROM response_data', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
 });
 
 // Choose the port and start the server

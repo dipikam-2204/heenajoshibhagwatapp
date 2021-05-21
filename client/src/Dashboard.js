@@ -18,30 +18,51 @@ class Dashboard extends Component {
   getList = () => {
     fetch('/api/getList')
     .then(res => res.json())
-    .then(list => this.setState({ list }))
+    .then(list => 
+     { console.log(list)
+      this.setState({ list })})
   }
 
   render() {
     const { list } = this.state;
-
     return (
       <div className="App">
         <h1>List of Items</h1>
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>
-            {/* Render the list of items */}
-            {list.map((item) => {
-              return(
-                <div key={item} >
-                  {item}
-                </div>
-              );
-            })}
+              <table className='table'>
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Vaccinated</th>
+                    <th>Travelled</th>
+                    <th>Symptoms</th>
+                    <th>Realtor</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {list.map(({first_name, last_name,vaccinated, travelled,symptoms,realtor,email_id,phone_number}) =>
+                    <tr key={1}>
+                        <td>{first_name}</td>
+                        <td>{last_name}</td>
+                        <td>{vaccinated?"Vaccinated":"Not Vaccinated"}</td>
+                        <td>{travelled?"Travelled":"Not Travelled"}</td>
+                        <td>{symptoms?"Symptoms":"Not Symptoms"}</td>
+                        <td>{realtor?"Realtor":"Not Realtor"}</td>
+                        <td>{email_id}</td>
+                        <td>{phone_number}</td>
+                    </tr>
+                )}
+                </tbody>
+            </table>
           </div>
         ) : (
           <div>
-            <h2>No List Items Found</h2>
+            <h2>No Responses yet</h2>
           </div>
         )
       }
