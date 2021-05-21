@@ -36,6 +36,20 @@ app.get('/api/getList', (request,response) => {
   })
 });
 
+
+//registeration
+app.post('/api/registration',(request,response)=>{
+  const {first_name,last_name,vaccinated,symptoms,travelled,realtor,email_id,phone_number}=request.body;
+  pool.query(`INSERT INTO response_data (first_name,last_name,vaccinated,symptoms,travelled,realtor,email_id,phone_number) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);`, [first_name,last_name,vaccinated,symptoms,travelled,realtor,email_id,phone_number], (err, res) => {
+    if (err) {
+        console.log("Error - Failed to insert data into Users");
+        console.log(err);
+    }
+    response.status(200).send("Succesfull insert!")
+});
+})
+
+
 // Choose the port and start the server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {

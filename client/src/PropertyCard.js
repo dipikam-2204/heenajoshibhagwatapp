@@ -14,6 +14,7 @@ const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
 
+
   return(
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={propertyImage} />

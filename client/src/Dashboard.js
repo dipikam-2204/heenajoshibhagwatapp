@@ -19,7 +19,7 @@ class Dashboard extends Component {
     fetch('/api/getList')
     .then(res => res.json())
     .then(list => 
-     { console.log(list)
+     {
       this.setState({ list })})
   }
 
@@ -27,7 +27,7 @@ class Dashboard extends Component {
     const { list } = this.state;
     return (
       <div className="App">
-        <h1>List of Items</h1>
+        <h1>People came for open house</h1>
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>
@@ -51,8 +51,8 @@ class Dashboard extends Component {
                         <td>{last_name}</td>
                         <td>{vaccinated?"Vaccinated":"Not Vaccinated"}</td>
                         <td>{travelled?"Travelled":"Not Travelled"}</td>
-                        <td>{symptoms?"Symptoms":"Not Symptoms"}</td>
-                        <td>{realtor?"Realtor":"Not Realtor"}</td>
+                        <td>{symptoms?"Symptoms":"No Symptoms"}</td>
+                        <td>{realtor?"Realtor":"No Realtor"}</td>
                         <td>{email_id}</td>
                         <td>{phone_number}</td>
                     </tr>
